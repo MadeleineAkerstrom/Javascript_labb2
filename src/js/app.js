@@ -19,20 +19,71 @@ const news = [
     },
 ]
 
-/** 
- * 
- * This is where you add code that will manipulate index.html!
- * 
- * When you open index.html in your browser, this javascript file will be run once. This javascript file is loaded via the script tag in index.html.
- * 
- * Most of what you need is in the lecture slides! For the stuff that isn't, there are very strong hints in the lecture slides at least. 
- * 
- * You can also figure most things out with the MDN docs. 
- * 
- * Or, by using chrome devtools and debugger statements. 
- * 
- * 
- * Good luck :) 
- */
+//ex01
+document.querySelector('#ex01').innerText= 'DONE'
+//ex02
+document.querySelector('.ex02').classList.add('.red')
+ //ex03 
+ document.querySelector('blockquote').innerText = 'I don´t do quotes'
+
+ //ex04
+ const list = document.querySelector('#shopping-list')
+ const addNew = document.createElement('li')
+ addNew.textContent = 'Milk'
+ list.appendChild(addNew)
+
+//ex05
+    let count = 0
+    let pageCount = document.querySelector('body')
+    let displayCount = document.querySelector('#click-counter')
+    pageCount.onclick = function countClicks() {
+        
+        count++
+        displayCount.innerHTML = count
+    }
+//ex06
+writeNews();
+
+    function writeNews() {
+        let newsContent = document.getElementById("news");
+        for (let i = 0; i < news.length; i++) {
+            let newsHeadline = document.createElement("h3");
+            newsHeadline.textContent = news[i].headline;
+            newsContent.appendChild(newsHeadline);
+
+            let newsSummary = document.createElement("p");
+            newsSummary.textContent = news[i].summary;
+            newsContent.appendChild(newsSummary);
+
+            let newsAuthor = document.createElement("p");
+            newsAuthor.textContent = news[i].author;
+            newsAuthor.style.fontStyle = "italic";
+            newsContent.appendChild(newsAuthor);
+
+            let newsLink = document.createElement("a");
+            newsLink.textContent = "Link to article";
+            newsLink.href = news[i].href;
+            newsLink.classList.add('.red')
+            newsContent.appendChild(newsLink);
+        }
+    }
+
+//ex07
+document.querySelector('button').onclick = function changeToDisabled() {
+
+    document.querySelector('button').disabled = 'true';
+ 
+ }
+
+//ex08
+document.querySelector('#link-to-svt').href = "javascript:void(0)"
+
+//ex09
+document.querySelector('img').src = "https://images.unsplash.com/photo-1634093999010-980f6353301e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80"
+
+
+debugger
 
  console.log('js loaded!')
+
+ 

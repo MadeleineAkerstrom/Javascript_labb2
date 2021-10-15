@@ -47,24 +47,24 @@ writeNews();
     function writeNews() {
         let newsContent = document.getElementById("news");
         for (let i = 0; i < news.length; i++) {
-            let newsHeadline = document.createElement("h3");
+            let theheadline = document.createElement("h4");
             newsHeadline.textContent = news[i].headline;
-            newsContent.appendChild(newsHeadline);
+            newsContent.appendChild(theheadline);
 
             let newsSummary = document.createElement("p");
-            newsSummary.textContent = news[i].summary;
-            newsContent.appendChild(newsSummary);
+            theSummary.textContent = news[i].summary;
+            newsContent.appendChild(theSummary);
 
             let newsAuthor = document.createElement("p");
-            newsAuthor.textContent = news[i].author;
-            newsAuthor.style.fontStyle = "italic";
-            newsContent.appendChild(newsAuthor);
+            theAuthor.textContent = news[i].author;
+            theAuthor.style.fontStyle = "italic";
+            newsContent.appendChild(theAuthor);
 
             let newsLink = document.createElement("a");
-            newsLink.textContent = "Link to article";
-            newsLink.href = news[i].href;
-            newsLink.classList.add('.red')
-            newsContent.appendChild(newsLink);
+            theLink.textContent = "Link to article";
+            theLink.href = news[i].href;
+            theLink.classList.add('.red')
+            newsContent.appendChild(theLink);
         }
     }
 
